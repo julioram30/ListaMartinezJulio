@@ -1,0 +1,15 @@
+<div class="alert alert-primary text-center fst-bold">
+    <p *ngFor="let titulo of titulos">{{titulo | titlecase}} </p>
+    
+</div>
+<div class="alert alert-warning text-center fst-italic">
+    <!--<p [ngClass]="{'alert-primary':'flag'}">{{dato | uppercase}}</p>  -->
+    <p [ngClass]="'flag'?'alert-warning':'alert-primary'">{{dato | uppercase}}</p> 
+    <!--la logica del flag funciona pero no se porque no conmuta la clase a revision -->
+</div>
+<div>
+    <ul>
+        <li class="list-group-item text-center" *ngFor="let item of nombres" (click)="selecciona(item)">{{item}} </li>
+    </ul>
+</div>
+
